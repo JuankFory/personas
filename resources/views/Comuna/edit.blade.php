@@ -18,7 +18,7 @@
 						
 						<div class="form-group">
 							<label for="muni_codi">Municipio </label>
-							<select name='area_id' class = 'form-control'>
+							<select name='muni_codi' class = 'form-control'>
 								<option value="">Seleccione uno ... </option>
 								@foreach($municipios as $municipio)
 									@if($comuna->muni_codi == $municipio->muni_codi)

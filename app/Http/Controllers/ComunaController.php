@@ -23,6 +23,7 @@ class ComunaController extends Controller
                     ->select('c.comu_codi','c.comu_nomb','c.muni_codi','tb_municipio.muni_nomb')
                     ->get();
         return view('comuna.index', compact('comunas'));
+       
     }
 
     /**
@@ -52,6 +53,7 @@ class ComunaController extends Controller
         $comuna->muni_codi = $request->muni_codi;
         $comuna->save();
         return redirect()->route('comuna.index')->with('status','guardado');
+       
     }
 
     /**
