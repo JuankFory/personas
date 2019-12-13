@@ -21,7 +21,7 @@ class ComunaController extends Controller
         $comunas = DB::table('tb_comuna as c')
                     ->join('tb_municipio','c.muni_codi','=','tb_municipio.muni_codi')
                     ->select('c.comu_codi','c.comu_nomb','c.muni_codi','tb_municipio.muni_nomb')
-                    ->get();
+                    ->paginate(10);
         return view('comuna.index', compact('comunas'));
        
     }

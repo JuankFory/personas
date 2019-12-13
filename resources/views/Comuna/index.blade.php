@@ -44,5 +44,7 @@
                 </tr>
             @endforeach
         </tbody>
-	</table>	
-@endsection
+    </table>
+    {{$comunas->Links()}}	
+    
+    @endsection
