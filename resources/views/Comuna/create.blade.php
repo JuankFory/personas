@@ -8,13 +8,22 @@
 
 	<div class="row" >
 	<div class="col-sm">
+			@if ($errors->any())
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
 		<div class="card" style="margin-top: 10px;">
 			<div class="card-body">
 				<form method="POST" action="/comuna" accept-charset="UTF-8" style="display:inline">
 					@csrf			
 					<div class="form-group">
 						<label for="comuna">Comuna</label>
-						<input type="text" class="form-control" name="comu_nomb" id="comu_nomb" aria-describedby="comunalHelp">
+						<input type="text" class="form-control" name="comu_nomb"  aria-describedby="comunalHelp"id="comu_nomb" value={{!!old('comu_nomb')}}> 
 						<small id="comunalHelp" class="form-text text-muted">Nombre de la comuna.</small>
 					</div>
 					<div class="form-group">

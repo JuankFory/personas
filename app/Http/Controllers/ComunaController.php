@@ -46,7 +46,9 @@ class ComunaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate(['comu_nomb'=>'required|min:5'
+        ,'muni_codi'=>'required']);
+        
         $comuna = new Comuna;
         //$flight->name = $request->name
         $comuna->comu_nomb = $request->comu_nomb;
